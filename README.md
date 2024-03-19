@@ -48,6 +48,5 @@ npm run test:ui
 ```
 
 ## TODO
-* Improve TS implementation.
 * Implement API test suite.
 * Implement TravisCI.

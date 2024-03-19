@@ -5,22 +5,28 @@ When('I am on the sign in page', () => {
 });
 
 When('I click the Accept All button on the OneTrust cookie modal if it is visible', () => {
-  cy.get('button').contains('Accept All').should('be.visible').click();
+  cy.get('button')
+    .contains('Accept All')
+    .then(($button) => {
+      if ($button.is(':visible')) {
+        $button.click();
+      }
+    });
 });
 
 When('I click the click the Create free account button', () => {
   cy.get('button').contains('Create free account').click();
 });
 
-When('I enter {string} in the email field', (email) => {
+When('I enter {string} in the email field', (email: string) => {
   cy.get('input[type="email"]').type(email);
 });
 
-When('I enter {string} in the password field', (password) => {
+When('I enter {string} in the password field', (password: string) => {
   cy.get('input[type="password"]').type(password);
 });
 
-Then('The page title should be correct', () => {
+Then('the page title should be correct', () => {
   cy.title().should('eq', 'Sign up for the Bitly Connections Platform');
 });
 
