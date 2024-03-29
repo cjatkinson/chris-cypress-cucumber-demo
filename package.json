@@ -5,8 +5,8 @@
   "scripts": {
     "lint": "eslint .",
     "pretty": "npx prettier . --write",
-    "test": "cypress run --spec \"**/*.feature\"",
-    "test:ui": "cypress open"
+    "cy:run": "cypress run --spec \"**/*.feature\"",
+    "cy:open": "cypress open"
   },
   "keywords": [],
   "license": "ISC",
